@@ -1,12 +1,5 @@
 // --- CMDLine Advanced Notepad ---
 (function() {
-    const waitForCMDLine = async () => {
-        while (!window.CMDLine) {
-            await new Promise(r => setTimeout(r, 50)); // check every 50ms
-        }
-        initNotepad(window.CMDLine);
-    };
-
     const initNotepad = (CMDLine) => {
         // Tabs state
         const tabs = [];

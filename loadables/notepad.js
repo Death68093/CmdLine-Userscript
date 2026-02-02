@@ -1,9 +1,25 @@
 // --- CMDLine Notepad App ---
 (function() {
-    if(!window.CMDLine) {
+    // notepad.js
+(function() {
+    const CMDLine = window.CMDLine;
+    if(!CMDLine) {
         console.error("CMDLine not detected");
         return;
     }
+
+    // Example: register a command
+    CMDLine.commands['notepad'] = {
+        run: async (_, args) => {
+            const filename = args[1];
+            if(!filename) return 'usage: notepad <file>';
+            CMDLine.editor.open(filename);
+            return '';
+        },
+        desc: 'Open a file in Notepad'
+    };
+})();
+
 
     const host = document.getElementById('cmdline-modal');
     if(!host) return;

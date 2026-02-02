@@ -1,5 +1,5 @@
 // --- Advanced Notepad App ---
-(function() {
+document.onload = () => {
     // Create HTML structure
     const body = document.body;
     body.style.margin = "0";
@@ -137,4 +137,4 @@
         lineNumbers.scrollTop = textarea.scrollTop;
     });
 
-})();
+};
